@@ -10,9 +10,9 @@ import Header from './components/Header.jsx';
 const App = () => {
   return (
     <BrowserRouter>
-    <Header />
+     <Header />
       <Routes>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SignIn />} />
