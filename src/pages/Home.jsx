@@ -1,11 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
+
 
 
 const Home = () => {
-  console.log(Home)
 
   return (
-    <div>Home</div>
+    <section>
+    <Header />
+    </section>
   )
 }
 

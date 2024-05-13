@@ -1,10 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Home, Profile, SignIn, SignUp, About} from './pages/index.js'
+import About from './pages/About.jsx';
+import Home from './pages/Home.jsx';
+import Profile from './pages/Profile.jsx';
+import SignIn from './pages/SignIn.jsx';
+import SignUp from './pages/SignUp.jsx';
+import Header from './components/Header.jsx';
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/profile" element={<Profile />} />
