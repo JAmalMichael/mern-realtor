@@ -19,10 +19,10 @@ const connectDb = async () => {
 
 }
 
-//routers
-app.use("/api/user", userRouter)
+//routers (test router, signup router)
+app.use("/api/user", userRouter);
 
-//connectDb();
+connectDb();
 app.listen(Port, () => {
    console.log(`Server is running at ${Port}`)
 })
