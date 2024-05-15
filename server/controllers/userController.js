@@ -7,7 +7,7 @@ export  const userTest =  (req, res) => {
     res.json({message: "Just settling in.."})
  }
 
- export const userSignUp = asyncHandler ( async (req, res) => {
+ export const userSignUp = asyncHandler ( async (req, res, next) => {
    const {username, email, password} = req.body;
    const hashedPassword = bcrypt.hashSync(password, 10)
    const newUser = User({username, email, password: hashedPassword})
@@ -16,7 +16,7 @@ export  const userTest =  (req, res) => {
       res.status(200).json("User created successfully")
       
    } catch (error) {
-      throw new Error(error.message)
+      next(error);
    }
    
  })

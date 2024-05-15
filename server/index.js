@@ -22,6 +22,16 @@ const connectDb = async () => {
 //routers (test router, signup router)
 app.use("/api/user", userRouter);
 
+app.use( (err, req, res, next) => {
+   let statusCode = 500 || err.statusCode;
+   let message = err.message || "Internal server error";
+   return res.status(statusCode).json({
+      success: flase,
+      statusCode,
+      message
+   })
+})
+
 connectDb();
 app.listen(Port, () => {
    console.log(`Server is running at ${Port}`)
